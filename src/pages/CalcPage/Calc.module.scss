@@ -1,0 +1,76 @@
+@import '../../styles/Variables.scss';
+
+.SCalc {
+  padding: $index calc($index * 3);
+  h1 {
+    text-align: center;
+    color: $title-color;
+  }
+}
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: $index;
+}
+.formFloor {
+  width: 30svw;
+  display: flex;
+  justify-content: space-between;
+}
+.inputFloor input[type=radio] {
+  display: none;
+}
+.inputFloor label {
+	display: inline-block;
+	padding: calc($index * 0.3) calc($index * 0.5);
+	line-height: $index;
+	border: 1px solid $grey-color;
+	border-radius: $index;
+	cursor: pointer;
+	user-select: none;
+  transition: $button-transition;
+}
+.inputFloor label:hover {
+  color: $title-color;
+  border-color: $title-color;
+}
+.inputFloor input[type=radio]:checked + label {
+	background: $liner-gradient;
+  color: white;
+  border-color: white;
+  user-select: none;
+  pointer-events: none;
+}
+.formIn {
+  display: flex;
+  label {
+    margin-right: calc($index * 0.5);
+  }
+}
+.inputIn {
+  padding-inline: $index;
+  &:nth-child(2) {
+    border-left: 1px solid $grey-color;
+    border-right: 1px solid $grey-color;
+  }
+}
+.inputNumber {
+  background: transparent;
+  outline: none;
+  appearance: textfield;
+  width: 5svw;
+  height: calc($index * 1.6);
+  padding: calc($index * 0.5);
+  border: 2px solid $grey-color;
+  border-radius: $index;
+  color: white;
+  font-size: calc($index * 0.8);
+  transition: $button-transition;
+}
+.inputNumber:focus {
+  border-color: $title-color;
+  box-shadow: 0 0 10px $title-color;
+}
+#submitCalcButton {
+  width: 8svw;
+}
