@@ -33,6 +33,7 @@
 .inputFloor label:hover {
   color: $title-color;
   border-color: $title-color;
+  box-shadow: 0 0 6px $title-color;
 }
 .inputFloor input[type=radio]:checked + label {
 	background: $liner-gradient;
@@ -58,6 +59,7 @@
   background: transparent;
   outline: none;
   appearance: textfield;
+  -webkit-appearance: textfield;
   width: 5svw;
   height: calc($index * 1.6);
   padding: calc($index * 0.5);
