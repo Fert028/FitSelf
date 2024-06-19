@@ -1,35 +1,45 @@
 import styles from './Calc.module.scss';
+import { useLayoutEffect } from 'react';
 
 function Calc() {
-  const form = document.forms.calculator;
-  const formInputFloor = form.elements.floor;
-  const formInputAge = form.elements.age;
-  const formInputHeight = form.elements.height;
-  const formInputWeight = form.elements.weight;
-  const submitCalcButton = document.getElementById('submitCalcButton');
-  const outputResult = document.getElementById('outputResult');
- 
-  submitCalcButton.addEventListener('click', () => {
-    const calculation = ((10 * formInputWeight) + (6.25 * formInputHeight) - (5 * formInputAge));
-    switch (formInputFloor.value) {
-      case 'man': outputResult.innerHTML = calculation + 5;
-      break;
-      case 'gerl': outputResult.innerHTML = calculation - 161;
-      break;
-      default: alert('Заолните все поля');
-      break;
-    }
-  });
+
+  useLayoutEffect(() => {
+		const submitCalcButton = document.getElementById('submitCalcButton')
+		const outputResult = document.getElementById('outputResult')
+
+		submitCalcButton.addEventListener('click', (e) => {
+			e.preventDefault() // Add this to prevent form submission
+			const form = document.forms.calculator
+			const formInputFloor = form.elements.floor
+			const formInputAge = form.elements.age
+			const formInputHeight = form.elements.height
+			const formInputWeight = form.elements.weight
+
+			if (formInputFloor.value && formInputAge.value && formInputHeight.value && formInputWeight.value) {
+				const calculation = 10 * formInputWeight.value + 6.25 * formInputHeight.value - 5 * formInputAge.value
+				switch (formInputFloor.value) {
+					case 'man':
+						outputResult.innerHTML = calculation + 5
+						break
+					case 'gerl':
+						outputResult.innerHTML = calculation - 161
+						break
+				}
+			} else {
+				outputResult.innerHTML = 'Заполните, пожалуйста, все поля.'
+			}
+		})
+	}, [])
 
   return(
     <main>
+      <h1>Калькулятор калорий</h1>
       <section className={styles.SCalc}>
-        <h1>Калькулятор калорий</h1>
 
         <form className={styles.calculator} name='calculator'>
           
           <div className={styles.formFloor}>
-            <h3>Выберите пол:</h3>
+            <p>Выберите пол:</p>
             
             <div className={styles.inputFloor}>
               <input className={styles.radioFloor} id='man' type="radio" name='floor' value='man' />
@@ -62,11 +72,13 @@ function Calc() {
 
           </div>
 
-          <button id={styles.submitCalcButton} type='submit'>Расчитать каллории</button>
+          <div className={styles.buttonContainer}>
+            <button id='submitCalcButton' className={styles.submitCalcButton} type='submit'>Расчитать каллории</button>
+          </div>
 
         </form>
 
-        <h3 id={styles.outputResult}></h3>
+        <p className={styles.result}>Рекомендуемая суточная норма калорий: <span id='outputResult'></span></p>
 
       </section>
     </main>
