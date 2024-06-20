@@ -1,40 +1,40 @@
 import styles from './Calc.module.scss';
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 
 function Calc() {
 
-  useLayoutEffect(() => {
-		const submitCalcButton = document.getElementById('submitCalcButton')
-		const outputResult = document.getElementById('outputResult')
+  useEffect(() => {
+		const submitCalcButton = document.getElementById('submitCalcButton');
+		const outputResult = document.getElementById('outputResult');
 
 		submitCalcButton.addEventListener('click', (e) => {
-			e.preventDefault() // Add this to prevent form submission
-			const form = document.forms.calculator
-			const formInputFloor = form.elements.floor
-			const formInputAge = form.elements.age
-			const formInputHeight = form.elements.height
-			const formInputWeight = form.elements.weight
+			e.preventDefault();
+			const form = document.forms.calculator;
+			const formInputFloor = form.elements.floor;
+			const formInputAge = form.elements.age;
+			const formInputHeight = form.elements.height;
+			const formInputWeight = form.elements.weight;
 
 			if (formInputFloor.value && formInputAge.value && formInputHeight.value && formInputWeight.value) {
-				const calculation = 10 * formInputWeight.value + 6.25 * formInputHeight.value - 5 * formInputAge.value
+				const calculation = 10 * formInputWeight.value + 6.25 * formInputHeight.value - 5 * formInputAge.value;
 				switch (formInputFloor.value) {
 					case 'man':
-						outputResult.innerHTML = calculation + 5
-						break
+						outputResult.innerHTML = calculation + 5;
+						break;
 					case 'gerl':
-						outputResult.innerHTML = calculation - 161
-						break
+						outputResult.innerHTML = calculation - 161;
+						break;
 				}
 			} else {
-				outputResult.innerHTML = 'Заполните, пожалуйста, все поля.'
+				outputResult.innerHTML = 'Заполните, пожалуйста, все поля.';
 			}
-		})
-	}, [])
+		});
+	}, []);
 
   return(
     <main>
       <h1>Калькулятор калорий</h1>
-      <section className={styles.SCalc}>
+      <div className={styles.SCalc}>
 
         <form className={styles.calculator} name='calculator'>
           
@@ -78,9 +78,9 @@ function Calc() {
 
         </form>
 
-        <p className={styles.result}>Рекомендуемая суточная норма калорий: <span id='outputResult'></span></p>
+        <p className={styles.result}>Рекомендуемая суточная норма калорий: <br /><span id='outputResult'>____</span></p>
 
-      </section>
+      </div>
     </main>
   )
 }
