@@ -56,9 +56,6 @@
     text-shadow: $text-shadow;
     pointer-events: none;
   }
-  img {
-    height: calc($index * 7.5);
-  }
 }
 .sectionServises {
   width: inherit;

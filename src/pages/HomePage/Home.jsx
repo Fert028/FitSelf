@@ -2,7 +2,6 @@ import styles from './Home.module.scss';
 import ServiseCard from '../../Components/Servises/ServiseCard'
 import SInfoContent from "../../Components/SInfoContent/SInfoContent";
 import '../../img/image/fitSelf.jpg';
-import '../../img/icons/dots.svg';
 
 function Home() {
   return(

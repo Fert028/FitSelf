@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 import Layout from './Components/Layout';
 import Home from './pages/HomePage/Home';
@@ -9,6 +10,13 @@ import Tasks from './pages/TasksPage/Tasks';
 
 function App() {
   return (
+    <>
+    <SignedOut>
+      <SignInButton />
+    </SignedOut>
+    <SignedIn>
+      <UserButton />
+    </SignedIn>
     <Routes>
       <Route path='/' element={ <Layout /> }>
         <Route index element={ <Home /> } />
@@ -17,6 +25,7 @@ function App() {
         <Route path='/calculator' element={ <Calc /> } />
       </Route>
     </Routes>
+    </>
   )
 }
 
