@@ -72,24 +72,6 @@ h1 {
     border-right: 1px solid $grey-color;
   }
 }
-.inputNumber {
-  background: transparent;
-  outline: none;
-  appearance: textfield;
-  -webkit-appearance: textfield;
-  width: 5svw;
-  height: calc($index * 1.6);
-  padding: calc($index * 0.5);
-  border: 1px solid $grey-color;
-  border-radius: $index;
-  color: white;
-  font-size: calc($index * 0.8);
-  transition: $button-transition;
-}
-.inputNumber:focus {
-  border-color: $title-color;
-  box-shadow: 0 0 10px $title-color;
-}
 .submitCalcButton {
   outline: none;
   border: none;

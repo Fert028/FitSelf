@@ -1,3 +1,51 @@
 @import '../../styles/Variables.scss';
 
-
+.container {
+  height: 80cqh;
+  display: flex;
+  flex-direction: column;
+  gap: 15cqh;
+  margin-top: $index;
+  h1 {
+    margin: 0;
+  }
+}
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $index;
+  .timer {
+    font-size: calc($index * 5);
+  }
+  .controls {
+    display: flex;
+    gap: $index;
+  }
+}
+.button {
+  outline: none;
+  border: none;
+  padding: calc($index * 0.3) calc($index * 0.5);
+  border-radius: $index;
+  user-select: none;
+  border: 1px solid transparent;
+  background-color: $title-color;
+  color: $main-color;
+  font-size: calc($index * 0.7);
+  text-align: center;
+  transition: $button-transition;
+  &:hover {
+    border-color: $title-color;
+    background-color: transparent;
+    color: $title-color;
+  }
+  &:disabled {
+    background-color: $grey-color;
+    pointer-events: none;
+  }
+}
+input[type=number].inputTime {
+  width: 7svw;
+}

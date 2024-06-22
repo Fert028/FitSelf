@@ -90,6 +90,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: calc($index * 4.4);
+  container-type: size;
   section {
     width: inherit;
   }
@@ -97,8 +98,7 @@ main {
 .button-container {
   outline: none;
   border: none;
-  width: calc($index * 5.5);
-  height: calc($index * 1.6);
+  padding: calc($index * 0.3) calc($index * 0.5);
   border-radius: $index;
   user-select: none;
   .button {
@@ -114,6 +114,28 @@ main {
       background-color: transparent;
       color: $title-color;
     }
+    &:disabled {
+      background-color: $grey-color;
+      pointer-events: none;
+    }
+  }
+}
+input[type=number] {
+  background: transparent;
+  outline: none;
+  appearance: textfield;
+  -webkit-appearance: textfield;
+  width: 5svw;
+  height: calc($index * 1.6);
+  padding: calc($index * 0.5);
+  border: 1px solid $grey-color;
+  border-radius: $index;
+  color: white;
+  font-size: calc($index * 0.8);
+  transition: $button-transition;
+  &:hover {
+    border-color: $title-color;
+    box-shadow: 0 0 10px $title-color;
   }
 }
 .Footer {
