@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styles from './Meditation.module.scss'
+import styles from './Meditation.module.scss';
+import ReactPlayer from 'react-player'
 
 function Meditation() {
   const [timeRemaining, setTimeRemaining] = useState(0);
@@ -53,11 +54,13 @@ function Meditation() {
   const minutes = Math.floor(timeRemaining / 60);
   const seconds = timeRemaining % 60;
 
-	return (
-		<main>
-			<div className={styles.container}>
 
-        <h1>Таймер для медитации</h1>
+  let urlVideos = 'https://youtu.be/kndqIj8Qgok?si=XDxxKJZD0EkBA1I1'; // default url
+
+	return (
+    <main>
+      <div className="title"><h1>Таймер для медитации</h1></div>
+			<div className={styles.wrapper}>
 
         <div className={styles.timerContainer}>
           <div className={styles.timer}>
@@ -82,6 +85,16 @@ function Meditation() {
               />
             }
           </div>
+        </div>
+
+        <div className={styles.playerContainer}>
+          <ReactPlayer
+            url={urlVideos}
+            width='40svw'
+            playing={false}
+            loop={false}
+            controls={false}
+            />
         </div>
 
 			</div>

@@ -85,15 +85,29 @@ a {
 }
 main {
   width: $main-width;
-  min-height: calc(100svh - (9svh + 8svh));
+  min-height: calc(100svh - (9svh + 8svh + 1px));
   margin-top: 8svh;
   display: flex;
   flex-direction: column;
-  gap: calc($index * 4.4);
-  container-type: size;
   section {
     width: inherit;
   }
+  .title {
+    width: 100%;
+    height: min-content;
+    padding: $index;
+    h1 {
+      text-align: center;
+      background: $liner-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: $text-shadow;
+    }
+  }
+}
+.main {
+  gap: calc($index * 4.4);
 }
 .button-container {
   outline: none;

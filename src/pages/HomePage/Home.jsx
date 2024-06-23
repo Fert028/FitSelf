@@ -1,12 +1,10 @@
 import styles from './Home.module.scss';
 import ServiseCard from '../../Components/Servises/ServiseCard'
 import SInfoContent from "../../Components/SInfoContent/SInfoContent";
-import '../../img/image/fitSelf.jpg';
 
 function Home() {
   return(
-    <main>
-
+    <main className='main'>
       <section className={styles.sectionTop}>
         <div className={styles.glassContainer}>
           <article className={styles.glass}>
@@ -15,15 +13,11 @@ function Home() {
             <p>Тренажерный зал - это клуб, здание или большая комната, содержащая специальное оборудование, куда люди ходят расслабится.</p>
           </article>
         </div>
-        <div className={styles.imageContainer}>
-          <img src="img/image/fitSelf.jpg" alt="fit" />
-        </div>
+        <div className={styles.imageContainer}></div>
       </section>
-
       <section className={styles.SExercise}>
-          <h1>FitSelf &mdash; New Sports</h1>
+        <h1>FitSelf &mdash; New Sports</h1>
       </section>
-
       <section className={styles.sectionServises}>
         <div className={styles.sectionServises__container}>
           <div className={styles.cardContainer}>
@@ -46,7 +40,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       <section>
         <div className={styles.containerItemWater}>
           <article>
@@ -65,9 +58,7 @@ function Home() {
           </article>
         </div>
       </section>
-
       <SInfoContent />
-
     </main>
   )
 }
