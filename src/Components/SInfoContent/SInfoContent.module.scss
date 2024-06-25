@@ -38,10 +38,7 @@
   border-radius: $index;
   h3 {
     text-align: center;
-    background: $liner-gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: $accent-color-2
   }
   h2 {
     text-align: center;
