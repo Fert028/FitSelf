@@ -51,4 +51,8 @@
     justify-content: center;
   }
 }
-
+@media (max-width: 680px) {
+  .contentItem {
+    max-width: inherit;
+  }
+}

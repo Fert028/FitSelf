@@ -35,6 +35,8 @@ a {
   height: 9svh;
   background-color: rgba($main-color, 0.8);
   border-bottom: 1px solid $title-color;
+  display: flex;
+  align-items: center;
 }
 .Header__content {
   width: 80svw;
@@ -77,6 +79,12 @@ a {
       color: white;
       border-color: $title-color;
     }
+  }
+}
+@media (max-width: 680px) {
+  .Header__content {
+    margin-inline: $index;
+    width: 100%;
   }
 }
 main {

@@ -19,7 +19,7 @@
   display: grid;
   place-items: center;
   .glass {
-    max-width: 34.5svw;
+    width: 34.5svw;
     padding: $index;
     backdrop-filter: blur(calc($index * 0.4));
     border-radius: $index;
@@ -105,6 +105,27 @@
     text-shadow: $text-shadow;
     border-radius: $index;
     box-shadow: $box-shadow;
+  }
+}
+@media (max-width: 680px) {
+  .glass {
+    width: 50svw;
+  }
+  .sectionServises {
+    height: min-content;
+    padding: calc($index * 2);
+    .sectionServises__container {
+      width: 100%;
+      padding: calc($index * 2);
+    }
+  }
+  .sectionContent {
+    flex-direction: column;
+    align-items: center;
+    gap: calc($index * 2);
+    article {
+      max-width: 100%;
+    }
   }
 }
 
